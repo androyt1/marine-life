@@ -1,13 +1,13 @@
 import Shark from "./models/Shark";
 import { Canvas } from "@react-three/fiber";
-import { useProgress, Html } from "@react-three/drei";
+import { useProgress, Html, OrbitControls } from "@react-three/drei";
 import { Suspense } from "react";
 
 const App = () => {
     const { loaded } = useProgress();
     return (
         <div className='overflow-x-hidden min-h-screen max-w-[1000px] mx-auto flex flex-col items-center bg-gradient-to-b from-blue-900 to-blue-950 p-5'>
-            <div className='h-[150px] w-full md:w-[380px] mx-auto mb-5 fish-animation'>
+            <div className='h-[150px] w-full md:w-[310px] mx-auto  fish-animation '>
                 <Canvas className='h-full w-full'>
                     <ambientLight intensity={0.5} />
                     <directionalLight position={[-5, 5, 0]} intensity={3} />
@@ -18,16 +18,16 @@ const App = () => {
                             </Html>
                         }>
                         <Shark
-                            position-y={-0.9}
-                            position-x={5}
-                            scale={0.6}
-                            rotation-x={Math.PI * 2.1}
-                            rotation-y={Math.PI * 2.4}
+                            position={[4, 0, 0]}
+                            scale={0.5}
+                            rotationX={Math.PI * 2.1}
+                            rotationY={Math.PI * 2.4}
                         />
                     </Suspense>
+                    <OrbitControls />
                 </Canvas>
             </div>
-            <div className='w-full flex flex-col justify-start items-center text-center'>
+            <div className='w-full flex flex-col justify-start items-center text-center -mt-10'>
                 <h1 className='text-4xl md:text-8xl font-bold uppercase text-white'>Hi There</h1>
                 <h2 className='text-2xl md:text-5xl font-bold gradient-text mt-4'>
                     Lorem, ipsum dolor.
