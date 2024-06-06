@@ -12,7 +12,10 @@ const Shark = (props: any) => {
         action.play();
         action.setEffectiveTimeScale(1.5);
 
-        return () => mixer.stopAllAction(); // Clean up on component unmount
+        return () => {
+            action.stop(); // Stop the specific action
+            mixer.stopAllAction(); // Ensure all actions are stopped
+        };
     }, [animations, mixer]);
 
     useFrame((state, delta) => {
