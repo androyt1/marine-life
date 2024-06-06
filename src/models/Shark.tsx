@@ -23,7 +23,7 @@ const Shark = ({ rotationX, rotationY, ...props }: SharkProps) => {
         };
     }, [animations, mixer]);
 
-    useFrame((_state, delta) => {
+    useFrame((_, delta) => {
         mixer.update(delta);
     });
 
