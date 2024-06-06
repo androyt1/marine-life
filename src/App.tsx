@@ -27,7 +27,7 @@ const App = () => {
                     <OrbitControls />
                 </Canvas>
             </div>
-            <div className='w-full flex flex-col justify-start items-center text-center -mt-10'>
+            <div className='w-full flex flex-col justify-start items-center text-center '>
                 <h1 className='text-4xl md:text-8xl font-bold uppercase text-white'>Hi There</h1>
                 <h2 className='text-2xl md:text-5xl font-bold gradient-text mt-4'>
                     Lorem, ipsum dolor.
